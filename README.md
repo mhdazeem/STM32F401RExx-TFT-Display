@@ -1,4 +1,4 @@
-# STM32F401RTEx-TFT-Display
+# STM32F401RExx-TFT-Display
 This example shows how to integrate with the TFT 240x320 Display with the almost all the STM32 MCUs via SPI.
 To use this for different STM32MCU please update all the references from the source. Also, make sure to update the PIN layout if you are not using the SPI. Please look at the sample for the reference:
 
