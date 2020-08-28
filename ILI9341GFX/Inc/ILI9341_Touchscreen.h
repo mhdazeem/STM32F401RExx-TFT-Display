@@ -83,7 +83,8 @@ if(TP_Touchpad_Pressed())
 #define TOUCH_H
 
 #include "stm32f4xx_hal.h"
-#include "mxconstants.h"
+
+#include "../../User/Inc/mxconstants.h"
 
 
 #define TP_CLK_PORT								T_CLK_GPIO_Port

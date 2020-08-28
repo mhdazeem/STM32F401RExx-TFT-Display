@@ -18,13 +18,14 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "ILI9341_Touchscreen.h"
-#include "ILI9341_STM32_Driver.h"
-#include "ILI9341_GFX.h"
-#include "snow_tiger.h"
-#include "mxconstants.h"
+#include "../Inc/main.h"
+
 #include "stm32f4xx_hal_spi.h"
+#include "../../ILI9341GFX/Inc/ILI9341_GFX.h"
+#include "../../ILI9341GFX/Inc/ILI9341_STM32_Driver.h"
+#include "../../ILI9341GFX/Inc/ILI9341_Touchscreen.h"
+#include "../Inc/mxconstants.h"
+#include "../Inc/snow_tiger.h"
 
 SPI_HandleTypeDef hspi1;
 

@@ -20,8 +20,8 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "mxconstants.h"
+#include "../../User/Inc/main.h"
+#include "../../User/Inc/mxconstants.h"
 
 /**
   * Initializes the Global MSP.

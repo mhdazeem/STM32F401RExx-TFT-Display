@@ -85,8 +85,9 @@
 #define ILI9341_STM32_DRIVER_H
 
 #include "stm32f4xx_hal.h"
-#include "main.h"
-#include "mxconstants.h"
+
+#include "../../User/Inc/main.h"
+#include "../../User/Inc/mxconstants.h"
 
 
 #define ILI9341_SCREEN_HEIGHT 240 

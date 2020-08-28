@@ -45,10 +45,11 @@
 //-----------------------------------
 
 
-#include "ILI9341_STM32_Driver.h"
-#include "ILI9341_GFX.h"
-#include "5x5_font.h"
-#include "main.h"
+#include "../../ILI9341GFX/Inc/ILI9341_GFX.h"
+
+#include "../../ILI9341GFX/Inc/5x5_font.h"
+#include "../../ILI9341GFX/Inc/ILI9341_STM32_Driver.h"
+#include "../../User/Inc/main.h"
 
 /*Draw hollow circle at X,Y location with specified radius and colour. X and Y represent circles center */
 void ILI9341_Draw_Hollow_Circle(uint16_t X, uint16_t Y, uint16_t Radius, uint16_t Colour)

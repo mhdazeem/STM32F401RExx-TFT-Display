@@ -81,8 +81,9 @@
 //-----------------------------------
 
 /* Includes ------------------------------------------------------------------*/
-#include "ILI9341_STM32_Driver.h"
-#include "main.h"
+#include "../../ILI9341GFX/Inc/ILI9341_STM32_Driver.h"
+
+#include "../../User/Inc/main.h"
 
 /* Global Variables ------------------------------------------------------------------*/
 volatile uint16_t LCD_HEIGHT = ILI9341_SCREEN_HEIGHT;
