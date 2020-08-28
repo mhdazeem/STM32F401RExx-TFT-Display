@@ -37,9 +37,6 @@
 
 /* Private define ------------------------------------------------------------*/
 
-#define T_IRQ_Pin GPIO_PIN_2
-#define T_IRQ_GPIO_Port GPIOA
-
 #define T_CLK_Pin GPIO_PIN_5		// SCK	PA_5(D13)
 #define T_CLK_GPIO_Port GPIOA
 

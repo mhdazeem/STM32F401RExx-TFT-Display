@@ -99,9 +99,6 @@ if(TP_Touchpad_Pressed())
 #define TP_MOSI_PORT							T_MOSI_GPIO_Port
 #define TP_MOSI_PIN								T_MOSI_Pin
 
-#define TP_IRQ_PORT								T_IRQ_GPIO_Port
-#define TP_IRQ_PIN								T_IRQ_Pin
-
 #define CMD_RDY             					0X90
 #define CMD_RDX             					0XD0
 
