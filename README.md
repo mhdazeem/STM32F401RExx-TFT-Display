@@ -23,4 +23,4 @@ To use this for different STM32MCU please update all the references from the sou
 #define RST_GPIO_Port GPIOA
 ```
 
-Find the file mxconstants.h file for PIN layout.
+Find the file mxconstants.h for PIN layout.
