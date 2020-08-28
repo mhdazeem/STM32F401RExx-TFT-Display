@@ -24,3 +24,5 @@ To use this for different STM32MCU please update all the references from the sou
 ```
 
 Find the file mxconstants.h for PIN layout.
+
+![STM32-TFT Sketch](https://github.com/mhdazeem/STM32F401RExx-TFT-Display/blob/master/STM32-TFT%20Sketch/Pin%20Layout%20TFT%20Display.jpg)
