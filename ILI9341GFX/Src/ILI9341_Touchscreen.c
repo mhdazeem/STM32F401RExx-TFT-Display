@@ -37,7 +37,7 @@
 //	How to use this library
 //-----------------------------------
 //
-//	-If using MCUs other than STM32F7 you will have to change the #include "stm32f7xx_hal.h" in the ILI9341_Touchscreen.h to your respective .h file
+//	-If using MCUs other than STM32F4 you will have to change the #include "stm32f4xx_hal.h" in the ILI9341_GFX.h to your respective .h file
 //	-define GPIO inputs and outputs then map the Pins and Ports inside the ILI9341_Touchscreen.h
 //	-Library does not require any initialization calls apart from GPIO initialization. Initialize GPIOs before calling library functions!
 //
@@ -67,7 +67,7 @@ if(TP_Touchpad_Pressed())
 	{					
 		uint16_t x_pos = 0;
 		uint16_t y_pos = 0;
-		
+
 		uint16_t position_array[2];
 		if(TP_Read_Coordinates(position_array) == TOUCHPAD_DATA_OK)
 		{
@@ -75,7 +75,7 @@ if(TP_Touchpad_Pressed())
 		y_pos = position_array[1];
 		}							
 	}
-*/
+ */
 //-----------------------------------
 
 
@@ -86,50 +86,50 @@ if(TP_Touchpad_Pressed())
 //Internal Touchpad command, do not call directly
 uint16_t TP_Read(void)
 {
-    uint8_t i = 16;
-    uint16_t value = 0;
+	uint8_t i = 16;
+	uint16_t value = 0;
 
-    while(i > 0x00)
-    {
-        value <<= 1;
+	while(i > 0x00)
+	{
+		value <<= 1;
 
-				HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_RESET);
-			
-        if(HAL_GPIO_ReadPin(TP_MISO_PORT, TP_MISO_PIN) != 0)
-        {
-            value++;
-        }
+		HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_RESET);
 
-        i--;
-    };
+		if(HAL_GPIO_ReadPin(TP_MISO_PORT, TP_MISO_PIN) != 0)
+		{
+			value++;
+		}
 
-    return value;
+		i--;
+	};
+
+	return value;
 }
 
 //Internal Touchpad command, do not call directly
 void TP_Write(uint8_t value)
 {
-    uint8_t i = 0x08;
+	uint8_t i = 0x08;
 
-		HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_RESET);	
-	
-    while(i > 0)
-    {
-        if((value & 0x80) != 0x00)
-        {
-						HAL_GPIO_WritePin(TP_MOSI_PORT, TP_MOSI_PIN, GPIO_PIN_SET);
-        }
-        else
-        {
-						HAL_GPIO_WritePin(TP_MOSI_PORT, TP_MOSI_PIN, GPIO_PIN_RESET);
-        }
+	HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_RESET);
 
-        value <<= 1;
-				HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_SET);
-				HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_RESET);        
-        i--;
-    };
+	while(i > 0)
+	{
+		if((value & 0x80) != 0x00)
+		{
+			HAL_GPIO_WritePin(TP_MOSI_PORT, TP_MOSI_PIN, GPIO_PIN_SET);
+		}
+		else
+		{
+			HAL_GPIO_WritePin(TP_MOSI_PORT, TP_MOSI_PIN, GPIO_PIN_RESET);
+		}
+
+		value <<= 1;
+		HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(TP_CLK_PORT, TP_CLK_PIN, GPIO_PIN_RESET);
+		i--;
+	};
 }
 
 

@@ -37,7 +37,7 @@
 //	How to use this library
 //-----------------------------------
 //
-//	-If using MCUs other than STM32F7 you will have to change the #include "stm32f7xx_hal.h" in the ILI9341_GFX.h to your respective .h file
+//	-If using MCUs other than STM32F4 you will have to change the #include "stm32f4xx_hal.h" in the ILI9341_GFX.h to your respective .h file
 //
 //	If using "ILI9341_STM32_Driver" then all other prequisites to use the library have allready been met
 //	Simply include the library and it is ready to be used

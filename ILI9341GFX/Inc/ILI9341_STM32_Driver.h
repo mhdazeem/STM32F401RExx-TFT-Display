@@ -40,7 +40,7 @@
 //-----------------------------------
 //	Settings:	
 //	--SPI @ 50MHz 
-//	--STM32F746ZG Nucleo board
+//	--STM32F401RExx Nucleo board
 //	--Redraw entire screen
 //
 //	++		Theoretical maximum FPS with 50Mhz SPI calculated to be 40.69 FPS
@@ -154,6 +154,6 @@ void ILI9341_Draw_Colour_Burst(uint16_t Colour, uint32_t Size);
 void ILI9341_Draw_Rectangle(uint16_t X, uint16_t Y, uint16_t Width, uint16_t Height, uint16_t Colour);
 void ILI9341_Draw_Horizontal_Line(uint16_t X, uint16_t Y, uint16_t Width, uint16_t Colour);
 void ILI9341_Draw_Vertical_Line(uint16_t X, uint16_t Y, uint16_t Height, uint16_t Colour);
-	
+
 #endif
 

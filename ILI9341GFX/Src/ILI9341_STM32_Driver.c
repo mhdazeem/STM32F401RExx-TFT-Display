@@ -40,7 +40,7 @@
 //-----------------------------------
 //	Settings:	
 //	--SPI @ 50MHz 
-//	--STM32F746ZG Nucleo board
+//	--STM32F401RExx Nucleo board
 //	--Redraw entire screen
 //
 //	++		Theoretical maximum FPS with 50Mhz SPI calculated to be 40.69 FPS
@@ -156,7 +156,7 @@ void ILI9341_Set_Rotation(uint8_t Rotation)
 
 	ILI9341_Write_Command(0x36);
 	HAL_Delay(1);
-	
+
 	switch(screen_rotation)
 	{
 		case SCREEN_VERTICAL_1:
@@ -325,7 +325,7 @@ void ILI9341_Init(void)
 
 	//TURN ON DISPLAY
 	ILI9341_Write_Command(0x29);
-	
+
 	//STARTING ROTATION
 	ILI9341_Set_Rotation(SCREEN_VERTICAL_1);
 }
@@ -429,14 +429,14 @@ void ILI9341_Draw_Pixel(uint16_t X,uint16_t Y,uint16_t Colour)
 	unsigned char Temp_Buffer1[4] = {Y>>8,Y, (Y+1)>>8, (Y+1)};
 	HAL_SPI_Transmit(HSPI_INSTANCE, Temp_Buffer1, 4, 1);
 	HAL_GPIO_WritePin(LCD_CS_PORT, LCD_CS_PIN, GPIO_PIN_SET);
-	
+
 	//ADDRESS
 	HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(LCD_CS_PORT, LCD_CS_PIN, GPIO_PIN_RESET);
 	ILI9341_SPI_Send(0x2C);
 	HAL_GPIO_WritePin(LCD_DC_PORT, LCD_DC_PIN, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LCD_CS_PORT, LCD_CS_PIN, GPIO_PIN_SET);
-	
+
 	//COLOUR
 	HAL_GPIO_WritePin(LCD_CS_PORT, LCD_CS_PIN, GPIO_PIN_RESET);
 	unsigned char Temp_Buffer2[2] = {Colour>>8, Colour};

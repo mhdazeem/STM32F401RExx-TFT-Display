@@ -37,7 +37,7 @@
 //	How to use this library
 //-----------------------------------
 //
-//	-If using MCUs other than STM32F7 you will have to change the #include "stm32f7xx_hal.h" in the ILI9341_Touchscreen.h to your respective .h file
+//	-If using MCUs other than STM32F4 you will have to change the #include "stm32f4xx_hal.h" in the ILI9341_GFX.h to your respective .h file
 //	-define GPIO inputs and outputs then map the Pins and Ports inside the ILI9341_Touchscreen.h
 //	-Library does not require any initialization calls apart from GPIO initialization. Initialize GPIOs before calling library functions!
 //
@@ -67,7 +67,7 @@ if(TP_Touchpad_Pressed())
 	{					
 		uint16_t x_pos = 0;
 		uint16_t y_pos = 0;
-		
+
 		uint16_t position_array[2];
 		if(TP_Read_Coordinates(position_array) == TOUCHPAD_DATA_OK)
 		{
@@ -75,7 +75,7 @@ if(TP_Touchpad_Pressed())
 		y_pos = position_array[1];
 		}							
 	}
-*/
+ */
 //-----------------------------------
 
 
